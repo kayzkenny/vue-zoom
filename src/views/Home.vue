@@ -1,26 +1,35 @@
 <template>
   <div class="home">
-    <h1>Welcome {{user}}</h1>
+    <v-container>
+      <v-row align="center" justify="center">
+        <v-col cols="11">
+          <p class="text-center">Welcome 
+            <span class="font-weight-medium">{{user}}</span>
+          </p>
+        </v-col>
+      </v-row>
+      <v-row align="center" justify="center">
+        <v-col cols="7">
+          <p class="subtitle-1 text-center">
+            This app uses Firebase for real time communication
+             and WebRTC to create video chats between multiple users, 
+             allowing you to create rooms for your meeetings and 
+             invite attendees.
+          </p>
+        </v-col>
+      </v-row>
+    </v-container>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import db from '@/db.js'
 
 export default {
   name: 'Home',
   components: {
     // HelloWorld
   },
-  data: function() {
-    return {
-      user: null
-    }
-  },
-  async mounted() {
-    const snapshot = await db.collection('users').doc('ogRmkCUqZGmLmFWCf0pw').get();
-    this.user = snapshot.data().name;
-  }
+  props: ['user'],
 }
 </script>
