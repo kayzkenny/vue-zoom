@@ -1,8 +1,10 @@
 <template>
   <v-app>
-    <Navigation />
+    <Navigation/>
     <v-main>
-      <h1>Hello</h1>
+      <v-container fluid>
+      <router-view></router-view>
+    </v-container>
     </v-main>
   </v-app>
 </template>
