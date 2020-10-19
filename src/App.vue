@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import db from '@/db.js'
+import { db } from '@/db.js'
 import Navigation from './components/Navigation';
 
 export default {
