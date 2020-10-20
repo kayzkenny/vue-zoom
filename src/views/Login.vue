@@ -46,6 +46,7 @@
               ></v-text-field>
             </v-card-text>
           </v-form>
+          <v-divider></v-divider>
           <v-card-actions>
             <v-btn 
               small 
@@ -61,6 +62,9 @@
             >Forgot password</v-btn>
           </v-card-actions>
         </v-card>
+        <p class="subtitle-2 font-weight-light mt-4 text-center">
+          <router-link to="/register"> Don't have an account? Sign up here</router-link>
+        </p>
       </v-col>
     </v-row>
   </v-container>

@@ -5,6 +5,9 @@
         <v-btn to="/login" text>
             Login
         </v-btn>
+        <v-btn to="/register" text>
+            Register
+        </v-btn>
     </v-app-bar>
 </template>
 

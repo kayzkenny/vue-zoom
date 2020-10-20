@@ -34,3 +34,13 @@ export default {
   }
 };
 </script>
+
+<style>
+a {
+  text-decoration: none;
+  color: yellow;
+}
+.v-application a {
+  color: grey
+}
+</style>
