@@ -4,7 +4,7 @@
       <v-row align="center" justify="center">
         <v-col cols="11">
           <p class="text-center">Welcome 
-            <span class="font-weight-medium">{{user}}</span>
+            <span class="font-weight-medium">{{ user.displayName }}</span>
           </p>
         </v-col>
       </v-row>

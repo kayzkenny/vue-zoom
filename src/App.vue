@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { db } from '@/db.js'
+import { db, fb } from '@/db.js'
 import Navigation from './components/Navigation';
 
 export default {
@@ -26,11 +26,11 @@ export default {
     }
   },
   async mounted() {
-    const snapshot = await db
-      .collection('users')
-      .doc('ogRmkCUqZGmLmFWCf0pw')
-      .get();
-    this.user = snapshot.data().name;
+    fb.auth().onAuthStateChanged(user => {
+      if (user) {
+        this.user = user
+      }
+    })
   }
 };
 </script>
