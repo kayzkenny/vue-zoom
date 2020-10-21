@@ -3,34 +3,31 @@
     <Navigation :user="user" />
     <v-main>
       <v-container fluid>
-      <router-view :user="user" />
+      <router-view />
     </v-container>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import { db, fb } from '@/db.js'
+import { mapGetters } from "vuex";
 import Navigation from './components/Navigation';
-
 export default {
   name: 'App',
-
   components: {
     Navigation,
   },
-
   data: function() {
-    return {
-      user: null
-    }
+    return {}
   },
-  async mounted() {
-    fb.auth().onAuthStateChanged(user => {
-      if (user) {
-        this.user = user
-      }
-    })
+  computed: {
+    ...mapGetters("User", ["user"])
+  },
+  async created() {
+    await this.$store.dispatch("User/loadUser");
+  },
+  async updated() {
+    await this.$store.dispatch("User/loadUser");
   }
 };
 </script>

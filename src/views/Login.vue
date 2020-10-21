@@ -71,7 +71,7 @@
 </template>
 
 <script>
-import { db, fb } from "../db.js";
+import { auth } from "../db.js";
 export default {
   name: "Login",
   data: () => ({
@@ -100,7 +100,7 @@ export default {
         this.loading = true;
         try {
           const userCred = 
-            await fb.auth().signInWithEmailAndPassword(formData.email, formData.password);
+            await auth.signInWithEmailAndPassword(formData.email, formData.password);
           userCred != null 
             ? this.$router.push('/') 
             : this.feedback = "Something went wrong";

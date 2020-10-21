@@ -129,7 +129,7 @@
 </template>
 
 <script>
-import { db, fb } from "../db.js";
+import { auth } from "../db.js";
 export default {
   name: "Register",
   data: () => ({
@@ -190,7 +190,7 @@ export default {
             this.loading = true;
             try {
               const userCred = await fb
-                .auth().createUserWithEmailAndPassword(formData.email, formData.password);
+                auth.createUserWithEmailAndPassword(formData.email, formData.password);
               await userCred.user.updateProfile({
                 displayName: formData.fullName,
               })
